@@ -27,7 +27,7 @@ class Pose():
         self.width = int(self.video_reader.get_frame_width())
         self.height = int(self.video_reader.get_frame_height())
         self.video_fps = self.video_reader.get_video_fps()
-        self.fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+        self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         self.draw = Draw(self.width, self.height)
 
     def pose_algorithm(self):
@@ -233,7 +233,7 @@ class Pose():
         if self.video_reader.is_opened() is False:
             print("Error File Not Found.")
 
-        out = cv2.VideoWriter("output.avi", self.fourcc, self.video_fps, (self.width, self.height))
+        out = cv2.VideoWriter("output.mp4", self.fourcc, self.video_fps, (self.width, self.height))
         while self.video_reader.is_opened():
             image = self.video_reader.read_frame()
             if image is None:
@@ -325,7 +325,7 @@ class Pushup(Pose):
         if self.video_reader.is_opened() is False:
             print("Error File Not Found.")
 
-        out = cv2.VideoWriter("output.avi", self.fourcc, self.video_fps, (self.width, self.height))
+        out = cv2.VideoWriter("output.mp4", self.fourcc, self.video_fps, (self.width, self.height))
         pushup_count_prev = pushup_count_current = progress_counter = 0
         progress_bar_color = (255, 255, 255)
         while self.video_reader.is_opened():
@@ -486,7 +486,7 @@ class Plank(Pose):
         time_adjustment = 6 / self.video_fps # 6 is magic number
         progress_counter = 0
         progress_bar_color = (255, 255, 255)
-        out = cv2.VideoWriter("output.avi", self.fourcc, self.video_fps, (self.width, self.height))
+        out = cv2.VideoWriter("output.mp4", self.fourcc, self.video_fps, (self.width, self.height))
         while self.video_reader.is_opened():
             image = self.video_reader.read_frame()
             if image is None:
@@ -552,7 +552,7 @@ class Squat(Pose):
         if self.video_reader.is_opened() is False:
             print("Error File Not Found.")
 
-        out = cv2.VideoWriter("output.avi", self.fourcc, self.video_fps, (self.width, self.height))
+        out = cv2.VideoWriter("output.mp4", self.fourcc, self.video_fps, (self.width, self.height))
         squads_count_prev = squad_count_current = progress_counter = 0
         progress_bar_color = (255, 255, 255)
         while self.video_reader.is_opened():
@@ -642,7 +642,7 @@ class Jumpingjack(Pose):
         if self.video_reader.is_opened() is False:
             print("Error File Not Found.")
 
-        out = cv2.VideoWriter("output.avi", self.fourcc, self.video_fps, (self.width, self.height))
+        out = cv2.VideoWriter("output.mp4", self.fourcc, self.video_fps, (self.width, self.height))
         jj_count_prev = jj_count_current = progress_counter = 0
         progress_bar_color = (255, 255, 255)
         while self.video_reader.is_opened():
