@@ -12,8 +12,8 @@ class Draw():
     def __init__(self, width, height) -> None:
         self.width = width
         self.height = height
-        #self.font = ImageFont.truetype('../data/fonts/arial.ttf', self.height//24, encoding="unic")
-        self.font = ImageFont.load_default()
+        self.font = ImageFont.truetype('../data/fonts/arial.ttf', self.height//24, encoding="unic")
+        #self.font = ImageFont.load_default()
 
     def bbox(self):
         """ Draw bbox """
