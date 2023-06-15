@@ -265,9 +265,9 @@ class Pose():
                 self.prev_pose = self.pose_tracker[-1]
 
             out.write(image)
-            cv2.imshow('Estimation of Exercise', image)
-            if cv2.waitKey(5) & 0xFF == 27:
-                break
+            #cv2.imshow('Estimation of Exercise', image)
+            #if cv2.waitKey(5) & 0xFF == 27:
+                #break
         self.video_reader.release()
 
 
@@ -362,9 +362,9 @@ class Pushup(Pose):
                         progress_bar_color = random.choices(range(128, 256), k=3)
 
             out.write(image)
-            cv2.imshow('Pushups', image)
-            if cv2.waitKey(5) & 0xFF == 27:
-                break
+            #cv2.imshow('Pushups', image)
+            #if cv2.waitKey(5) & 0xFF == 27:
+                #break
         self.video_reader.release()
 
 
@@ -517,9 +517,9 @@ class Plank(Pose):
                 progress_counter = int(int(time) % self.video_fps)
 
             out.write(image)
-            cv2.imshow('Planks', image)
-            if cv2.waitKey(5) & 0xFF == 27:
-                break
+            #cv2.imshow('Planks', image)
+            #if cv2.waitKey(5) & 0xFF == 27:
+                #break
         self.video_reader.release()
 
 
@@ -589,9 +589,9 @@ class Squat(Pose):
                         progress_bar_color = random.choices(range(128, 256), k=3)
 
             out.write(image)
-            cv2.imshow('Squats', image)
-            if cv2.waitKey(5) & 0xFF == 27:
-                break
+            #cv2.imshow('Squats', image)
+            #if cv2.waitKey(5) & 0xFF == 27:
+                #break
         self.video_reader.release()
 
 
@@ -679,7 +679,7 @@ class Jumpingjack(Pose):
                         progress_bar_color = random.choices(range(128, 256), k=3)
 
             out.write(image)
-            cv2.imshow('JumpingJacks', image)
-            if cv2.waitKey(5) & 0xFF == 27:
-                break
+            #cv2.imshow('JumpingJacks', image)
+            #if cv2.waitKey(5) & 0xFF == 27:
+                #break
         self.video_reader.release()
